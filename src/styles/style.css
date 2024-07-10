@@ -1,0 +1,147 @@
+html {
+	font-size: var(--font-size-base);
+	background-color: #FEE826;
+	font-family: "Russo One", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+	text-align: center;
+	font-size: var(--font-size-large);
+	margin-top: var(--spacing-medium);
+	margin-bottom: var(--spacing-medium);
+}
+
+h2 {
+	text-align: center;
+	font-size: var(--font-size-medium);
+	margin-bottom: var(--spacing-medium);
+}
+
+
+.container{
+	width: 500px;
+	margin-bottom: var(--spacing-medium);
+}
+
+
+.container-for-nav{
+	display: flex;
+	justify-content: center;
+	margin-bottom: var(--spacing-small);
+	border-bottom: 4px solid black;
+	padding: 2px 0;
+}
+.container-for-nav h2 {
+flex-basis: 50%;
+align-items: center;
+}
+
+.navigation-bar{
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-link {
+	color: black;
+	padding: 10px 2px;
+	min-width: 66px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+
+.nav-link:hover {
+	color: #FEE826;
+	background-color: black;
+	
+}
+
+.logo{
+	width: 4em;
+	height: 4em;
+	border-radius: 50%;
+}
+
+.category-link {
+	display: flex;
+	border-radius: 15px;
+	position: relative;
+	justify-content: center;
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+	transition: transform 0.3s;
+}
+
+.category-link:hover {
+	transform: scale(1.05); 
+	box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-image{
+	border-radius: 15px;
+	display: block;
+}
+
+.site-description {
+	position: absolute;
+	text-transform: uppercase;
+	color: black;
+	font-size: 3rem;
+	bottom: 0.5rem;
+	-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FEE826;
+}
+
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: var(--spacing-large);
+}
+
+.list-container{
+	display: flex;
+	height: 3rem;
+	padding: var(--spacing-small);
+	border: 1px solid red;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.movie-list {
+	list-style-image: url("../assets/death-star.svg");
+	list-style-position: inside;
+	text-align: center;
+	font-size: 18px;
+}
+
+.movie-list li{
+	margin-bottom: 0.5rem;
+}
+
+.movie img {
+	max-height: 600px;
+width: auto;
+
+}
+
+.movie-intro{
+	text-align: center;
+}
+
+@media screen and (min-width: 1920px) {
+	body {
+		max-width: 1920px;
+		margin: 0 auto;
+	}
+
+
+}
