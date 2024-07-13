@@ -4,42 +4,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
       ".rendering_container"
     );
 
-    //fetch the nessary data from the api
-    const fetchPeople = async () => {
+    // Fetch data from the API
+    const fetchData = async (url) => {
       try {
-        const response = await fetch("https://swapi.dev/api/people/");
+        const response = await fetch(url);
         const result = await response.json();
         console.log(result);
-        return result.results; // Return the array of people
+        return result.results; // Return the array of data
       } catch (error) {
         console.log("An error occurred: " + error.message);
       }
     };
 
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch("https://swapi.dev/api/films/");
-        const result = await response.json();
-        return result.results; // Return the array of movies
-      } catch (error) {
-        console.log("An error occurred: " + error.message);
-      }
-    };
-
-    const fetchPlanets = async () => {
-      try {
-        const response = await fetch("https://swapi.dev/api/planets/");
-        const result = await response.json();
-        return result.results; // Return the array of planets
-      } catch (error) {
-        console.log("An error occurred: " + error.message);
-      }
-    };
-
+    // Render the people data
     async function renderPeople() {
-      const movies = await fetchMovies();
-      const people = await fetchPeople();
-      const planets = await fetchPlanets();
+      const people = await fetchData("https://swapi.dev/api/people/");
+      const movies = await fetchData("https://swapi.dev/api/films/");
+      const planets = await fetchData("https://swapi.dev/api/planets/");
 
       //logic to convert movie url to title and homeworld url to planetname
       const movieUrlToTitleMap = movies.reduce((acc, movie) => {
@@ -51,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         return acc;
       }, {});
 
-      people.forEach((person, index) => {
+      people.slice(0, 6).forEach((person, index) => {
+        //limit the number of people to 6
         try {
           //map the movie and homeworld urls to titles
           const movieTitles = person.films.map(
@@ -60,15 +42,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
           const planetName = planetUrlToNameMap[person.homeworld] || "Unknown";
 
           //create elements to display the data
-          const peopleContainer = document.createElement("div");
+          const peopleContainer = document.createElement("article");
+          peopleContainer.className = "people";
           const infoContainer = document.createElement("ul");
-		  const portraitContainer = document.createElement("img");
           infoContainer.className = "people-list";
+          const portraitContainer = document.createElement("img");
 
-		  // Append data to created elements
-          peopleContainer.append(infoContainer);
-		  peopleContainer.append(portraitContainer);
-		  
+          // Append data to created elements
+          peopleContainer.append(infoContainer, portraitContainer);
+
           // Append movie container to the appropriate rendering container
           renderingContainers[index % renderingContainers.length].appendChild(
             peopleContainer
@@ -80,6 +62,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		  <li>Height: ${person.height + " cm"}</li>
 		  <li>Appears in: ${movieTitles}</li>
 		  <li>Homeworld: ${planetName}</li>`;
+          const imageName = person.name.split(" ").join("-");
+          portraitContainer.src = `../assets/people/${imageName}.jpg`;
+          portraitContainer.alt = "Portrait of a Star Wars character";
         } catch (error) {
           console.log("An error occurred: " + error.message);
         }

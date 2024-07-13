@@ -133,6 +133,12 @@ width: auto;
 
 }
 
+.people img {
+	max-height: 456px;
+width: 456px;
+
+}
+
 .movie-intro{
 	text-align: center;
 }
