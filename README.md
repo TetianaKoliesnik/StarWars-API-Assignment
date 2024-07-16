@@ -15,7 +15,7 @@ University: Kristiania University College (Høyskolen Kristiania)
 
 API provided by: https://swapi.dev/
 
-Images by: https://disney.fandom.com/
+Images by: https://disney.fandom.com/, https://unsplash.com/@rojekilian, https://starwars.fandom.com/
 
 ### Summary
 So far, Git has been the trickiest part. I somehow managed to lose the initial project with all the commits when most of the project was finished.
