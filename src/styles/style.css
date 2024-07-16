@@ -3,6 +3,7 @@ html {
   background-color: #fee826;
   font-family: "Russo One", sans-serif;
   font-weight: 400;
+  min-height: 100vh;
 }
 
 h1 {
@@ -53,6 +54,7 @@ h2 {
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
 }
+
 
 .nav-link:hover {
   color: #fee826;
@@ -141,17 +143,18 @@ h2 {
   max-height: 403px;
   width: 403px;
   border-radius: 50%;
+
 }
 
 .vehicle img {
   max-height: 600px;
   max-width: 1000px;
 }
-
 .planets_background{
 	background-image: url("../assets/planets/starry_sky.jpg");
+  background-size: cover;
 }
-.planets-font, .planet-list li, .planet li{
+.planets-font, .planet li{
 	color: #fee826;
 }
 
