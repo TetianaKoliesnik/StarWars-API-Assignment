@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function(event){
 			);
   
 			// Render elements with data fetched from API
-			infoContainer.innerHTML = `<li>Name: ${planet.name}</li><li>Gravity: ${planet.gravity}</li><li>Population: ${planet.population} sentient beings</li><li>Climate: ${planet.climate}</li><li>Covered by water: ${planet.surface_water}% </li>`;
-			const imageName = planet.title.split(" ").join("-");
-			posterContainer.src = `../assets/${imageName}.jpg`;
+			infoContainer.innerHTML = `<li>Name: ${planet.name}</li><li>Gravity: ${planet.gravity}</li><li>Population: ${planet.population/1000}k sentient beings</li><li>Climate: ${planet.climate}</li><li>Covered by water: ${planet.surface_water}% </li>`;
+			const imageName = planet.name.split(" ").join("-");
+			posterContainer.src = `../assets/planets/${imageName}.jpg`;
 			posterContainer.alt = "Planet image";
 		  } catch (error) {
 			console.log(("An error occurred: " + error.message)); 
