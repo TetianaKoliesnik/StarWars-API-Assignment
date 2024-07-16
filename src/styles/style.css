@@ -143,6 +143,11 @@ h2 {
   border-radius: 50%;
 }
 
+.vehicle img {
+  max-height: 600px;
+  max-width: 1000px;
+}
+
 .planets_background{
 	background-image: url("../assets/planets/starry_sky.jpg");
 }
