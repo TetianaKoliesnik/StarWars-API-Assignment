@@ -115,7 +115,7 @@ h2 {
   justify-content: space-between;
 }
 
-.movie-list {
+.movie-list, .people-list, .planet-list, .vehicle-list {
   list-style-image: url("../assets/death-star.svg");
   list-style-position: inside;
   text-align: center;
