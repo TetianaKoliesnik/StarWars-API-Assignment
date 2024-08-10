@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     async function renderMovies() {
       const movies = await fetchMovies(); // Call fetchMovies to get the movie data
-      movies.forEach((movie, index) => {
+      movies.forEach((movie, index) => { 
         try {
           // Create elements
           const movieContainer = document.createElement("article");

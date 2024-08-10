@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       //logic to convert movie url to title and homeworld url to planetname
       const movieUrlToTitleMap = movies.reduce((acc, movie) => {
-        acc[movie.url] = movie.title; 
+        acc[movie.url] = movie.title;
         return acc;
       }, {});
       const planetUrlToNameMap = planets.reduce((acc, planet) => {
@@ -56,19 +56,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
             peopleContainer
           );
 
-
-
           infoContainer.innerHTML = `
 		  <li>Name: ${person.name}</li>
 		  <li>Birth Year: ${person.birth_year}</li>
 		  <li>Height: ${person.height + " cm"}</li>
-		  <li>Appears in: ${movieTitles.map(title => `<p>${title}</p>`).join('')}</li> 
+		  <li>Appears in: ${movieTitles
+        .map((title) => `<p>${title}</p>`)
+        .join("")}</li> 
 		  <li>Homeworld: ${planetName}</li>`;
           const imageName = person.name.split(" ").join("-");
           portraitContainer.src = `../assets/people/${imageName}.jpg`;
           portraitContainer.alt = "Portrait of a Star Wars character";
         } catch (error) {
           console.log("An error occurred: " + error.message);
+        }
+      });
+      const peopleLists = document.querySelectorAll(".people-list");
+
+      //add margin bottom to even out the content
+      peopleLists.forEach((list) => {
+        const listHeight = list.scrollHeight;
+        if (listHeight < 180) {
+          list.style.marginBottom = "66px";
+        } else if (listHeight < 210) {
+          list.style.marginBottom = "43px";
         }
       });
     }
