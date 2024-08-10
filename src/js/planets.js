@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 		  console.log(result);
 		  return result.results; // Return the array of planets
 		} catch (error) { 
-		  console.log(("An error occurred: " + error.message)); 
+			const errorMessageContainer = document.createElement("div");
+			errorMessageContainer.classList.add("error-message");
+			errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+			document.body.appendChild(errorMessageContainer);
 		}
 	  };
   
@@ -42,7 +45,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 			posterContainer.src = `../assets/planets/${imageName}.jpg`;
 			posterContainer.alt = "Planet image";
 		  } catch (error) {
-			console.log(("An error occurred: " + error.message)); 
+			const errorMessageContainer = document.createElement("div");
+			errorMessageContainer.classList.add("error-message");
+			errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+			document.body.appendChild(errorMessageContainer); 
 		  }
 		});
 	  }

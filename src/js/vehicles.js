@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 		  console.log(result);
 		  return result.results; // Return the array of vehicles
 		} catch (error) { 
-		  console.log(("An error occurred: " + error.message));
+			const errorMessageContainer = document.createElement("div");
+			errorMessageContainer.classList.add("error-message");
+			errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+			document.body.appendChild(errorMessageContainer);
 		}
 	  };
   
@@ -43,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 			posterContainer.src = `../assets/vehicles/${imageName}.jpg`;
 			posterContainer.alt = "Vehicle image";
 		  } catch (error) {
-			console.log(("An error occurred: " + error.message));
+			const errorMessageContainer = document.createElement("div");
+			errorMessageContainer.classList.add("error-message");
+			errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+			document.body.appendChild(errorMessageContainer);
 		  }
 		});
 	  }

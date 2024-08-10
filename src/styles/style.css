@@ -5,7 +5,21 @@ html {
   font-weight: 400;
   min-height: 100vh;
 }
-
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure the error message is on top of other elements */
+}
 h1 {
   text-align: center;
   font-size: var(--font-size-large);

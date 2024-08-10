@@ -12,7 +12,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         console.log(result);
         return result.results; // Return the array of data
       } catch (error) {
-        console.log("An error occurred: " + error.message);
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("error-message");
+        errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+        document.body.appendChild(errorMessageContainer);
       }
     };
 
@@ -68,7 +71,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
           portraitContainer.src = `../assets/people/${imageName}.jpg`;
           portraitContainer.alt = "Portrait of a Star Wars character";
         } catch (error) {
-          console.log("An error occurred: " + error.message);
+          const errorMessageContainer = document.createElement("div");
+          errorMessageContainer.classList.add("error-message");
+          errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+          document.body.appendChild(errorMessageContainer);
         }
       });
       const peopleLists = document.querySelectorAll(".people-list");

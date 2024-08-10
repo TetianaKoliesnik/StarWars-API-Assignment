@@ -1,21 +1,25 @@
-document.addEventListener("DOMContentLoaded", function(event){
-  if(document.querySelector(".rendering_container")){
-
-    const renderingContainers = document.querySelectorAll(".rendering_container");
+document.addEventListener("DOMContentLoaded", function (event) {
+  if (document.querySelector(".rendering_container")) {
+    const renderingContainers = document.querySelectorAll(
+      ".rendering_container"
+    );
 
     const fetchMovies = async () => {
       try {
         const response = await fetch("https://swapi.dev/api/films/");
         const result = await response.json();
         return result.results; // Return the array of movies
-      } catch (error) { 
-        alert("An error occurred: " + error.message); 
+      } catch (error) {
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("error-message");
+        errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+        document.body.appendChild(errorMessageContainer);
       }
     };
 
     async function renderMovies() {
       const movies = await fetchMovies(); // Call fetchMovies to get the movie data
-      movies.forEach((movie, index) => { 
+      movies.forEach((movie, index) => {
         try {
           // Create elements
           const movieContainer = document.createElement("article");
@@ -41,14 +45,16 @@ document.addEventListener("DOMContentLoaded", function(event){
           const imageName = movie.title.split(" ").join("-");
           posterContainer.src = `../assets/${imageName}.jpg`;
           posterContainer.alt = "Movie poster";
-          movieIntroContainer.innerText = `${movie.opening_crawl}`
+          movieIntroContainer.innerText = `${movie.opening_crawl}`;
         } catch (error) {
-          alert("An error occurred: " + error.message);
+          const errorMessageContainer = document.createElement("div");
+          errorMessageContainer.classList.add("error-message");
+          errorMessageContainer.textContent = "An error occurred, please try reloading the page";
+          document.body.appendChild(errorMessageContainer);
         }
       });
     }
 
     renderMovies();
-
   }
 });
