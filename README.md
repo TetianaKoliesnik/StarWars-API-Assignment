@@ -15,7 +15,7 @@ API provided by: https://swapi.dev/
 
 Images by: https://disney.fandom.com/, https://unsplash.com/@rojekilian, https://starwars.fandom.com/
 
-Deployed on Netlify: https://star-wars-api-assignment.netlify.app/ 
+Deployed on Netlify: 
 Sometimes it takes a couple seconds for the content to load
 
 
