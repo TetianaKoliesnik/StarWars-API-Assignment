@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 		try {
 		  const response = await fetch("https://swapi.dev/api/planets/");
 		  const result = await response.json();
-		  console.log(result);
 		  return result.results; // Return the array of planets
 		} catch (error) { 
 			const errorMessageContainer = document.createElement("div");

@@ -216,6 +216,10 @@ h2 {
     max-width: 40px;
   }
 
+  a {
+    justify-self: center;
+  }
+
   .wrapper {
     gap: 10px;
   }

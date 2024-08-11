@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 		try {
 		  const response = await fetch("https://swapi.dev/api/vehicles/");
 		  const result = await response.json();
-		  console.log(result);
 		  return result.results; // Return the array of vehicles
 		} catch (error) { 
 			const errorMessageContainer = document.createElement("div");
