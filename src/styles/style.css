@@ -33,7 +33,6 @@ h2 {
   margin-bottom: var(--spacing-medium);
 }
 
-
 .container {
   width: 500px;
   margin-bottom: var(--spacing-medium);
@@ -69,7 +68,6 @@ h2 {
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
 }
-
 
 .nav-link:hover {
   color: #fee826;
@@ -130,7 +128,10 @@ h2 {
   justify-content: space-between;
 }
 
-.movie-list, .people-list, .planet-list, .vehicle-list {
+.movie-list,
+.people-list,
+.planet-list,
+.vehicle-list {
   list-style-image: url("../assets/death-star.svg");
   list-style-position: inside;
   text-align: center;
@@ -158,26 +159,81 @@ h2 {
   max-height: 403px;
   width: 403px;
   border-radius: 50%;
-
 }
 
 .vehicle img {
   max-height: 600px;
   max-width: 1000px;
 }
-.planets_background{
-	background-image: url("../assets/planets/starry_sky.jpg");
+.planets_background {
+  background-image: url("../assets/planets/starry_sky.jpg");
   background-size: cover;
 }
-.planets-font, .planet li{
-	color: #fee826;
+.planets-font,
+.planet li {
+  color: #fee826;
 }
-
-
 
 @media screen and (min-width: 1920px) {
   body {
     max-width: 1920px;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* for mobile */
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+
+  .container-for-nav {
+    display: block;
+    border-bottom: none;
+  }
+
+  .navigation-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .logo {
+    justify-self: center; 
+    display: block;
+    max-height: 40px;
+    max-width: 40px;
+  }
+
+  .wrapper {
+    gap: 10px;
+  }
+
+  .category-link {
+    width: 100%;
+  }
+
+  .site-description {
+    font-size: 2rem;
+  }
+
+  .list-container {
+    padding: var(--spacing-small) 0;
+  }
+
+  img {
+    max-height: 300px;
+    margin: 10px;
   }
 }
