@@ -18,7 +18,6 @@ Images by: https://disney.fandom.com/, https://unsplash.com/@rojekilian, https:/
 Deployed on Netlify: https://api-starwars-redeploy.netlify.app/
 Sometimes it takes a couple seconds for the content to load
 
-GitHub: https://github.com/TetianaKoliesnik/StarWars-API-Assignment
 
 ### Conclusion
 During development, I almost lost my project despite it being on GitHub. Fortunately, I had a local copy on my PC, so a potential disaster was avoided. Lesson learned.
